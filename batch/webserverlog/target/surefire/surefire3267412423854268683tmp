@@ -1,0 +1,5 @@
+#surefire
+#Thu Feb 06 00:33:11 CST 2014
+user.dir=/Users/FreddGO/glassfish4/docs/javaee-tutorial/examples/batch/webserverlog
+localRepository=/Users/FreddGO/.m2/repository
+basedir=/Users/FreddGO/glassfish4/docs/javaee-tutorial/examples/batch/webserverlog
