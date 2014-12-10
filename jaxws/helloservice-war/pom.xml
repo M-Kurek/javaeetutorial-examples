@@ -1,40 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.glassfish.javaeetutorial</groupId>
-    <artifactId>helloservice-war</artifactId>
-    <packaging>war</packaging>
-    <name>helloservice-war</name>
-    <description>Simple example JAX-WS web service.</description>
+	<groupId>org.glassfish.javaeetutorial</groupId>
+	<artifactId>helloservice-war</artifactId>
+	<packaging>war</packaging>
+	<name>helloservice-war</name>
+	<description>Simple example JAX-WS web service.</description>
 
-    <parent>
-        <groupId>org.glassfish.javaeetutorial</groupId>
-        <artifactId>jaxws</artifactId>
-        <version>7.0.1</version>
-    </parent>
+	<parent>
+		<groupId>org.glassfish.javaeetutorial</groupId>
+		<artifactId>jaxws</artifactId>
+		<version>7.0.1</version>
+	</parent>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.jvnet.jax-ws-commons</groupId>
-                <artifactId>jaxws-maven-plugin</artifactId>
-                <version>${jaxws-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>generate-wsdl</id>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>wsgen</goal>
-                        </goals>
-                        <configuration>
-                            <sei>javaeetutorial.helloservice.Hello</sei>
-                            <genWsdl>true</genWsdl>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.7</java.version>
+	</properties>
+	<build>
+	    <finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.jvnet.jax-ws-commons</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>${jaxws-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>generate-wsdl</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>wsgen</goal>
+						</goals>
+						<configuration>
+							<sei>javaeetutorial.helloservice.Hello</sei>
+							<genWsdl>true</genWsdl>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>7.6.Final</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

@@ -20,7 +20,7 @@ import javax.xml.ws.WebServiceRef;
 @WebServlet(name="HelloServlet", urlPatterns={"/HelloServlet"})
 public class HelloServlet extends HttpServlet {
     @WebServiceRef(wsdlLocation = 
-      "http://localhost:8080/helloservice/HelloService?WSDL")
+      "http://localhost:8080/helloservice-war/Hello?wsdl")
     private HelloService service;
    
     /** 

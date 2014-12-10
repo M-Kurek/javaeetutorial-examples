@@ -14,6 +14,11 @@
         <version>7.0.1</version>
     </parent>
     
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.7</java.version>
+    </properties>
+    
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
@@ -31,12 +36,27 @@
                             <wsdlFiles>
                                 <wsdlFile>HelloService.wsdl</wsdlFile>
                             </wsdlFiles>
-                            <wsdlLocation>http://localhost:8080/helloservice/HelloService?WSDL</wsdlLocation>
+                            <wsdlLocation>http://localhost:8080/helloservice-war/Hello?wsdl</wsdlLocation>
                             <packageName>javaeetutorial.helloservice.endpoint</packageName>
                         </configuration>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <version>7.6.Final</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
