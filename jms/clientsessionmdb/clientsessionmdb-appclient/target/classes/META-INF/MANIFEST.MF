@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Built-By: FreddGO
-Build-Jdk: 1.7.0_40
-Class-Path: clientsessionmdb-ejb-7.0.1.jar
-Main-Class: javaeetutorial.clientsessionmdb.appclient.MyAppClient
-Created-By: Maven Integration for Eclipse
-

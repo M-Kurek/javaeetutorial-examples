@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Built-By: FreddGO
-Build-Jdk: 1.7.0_40
-Class-Path: roster-common-7.0.1.jar
-Main-Class: javaeetutorial.roster.client.RosterClient
-Created-By: Maven Integration for Eclipse
-
